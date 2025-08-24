@@ -1,3 +1,10 @@
+//  Log Out
+document.getElementById("btn-logOut").addEventListener("click", function () {
+  window.location.href = "./index.html";
+});
+
+//
+
 const account = "12345678910";
 const validPin = "1234";
 const banks = "Islami Bank";
@@ -44,15 +51,15 @@ document
   .addEventListener("click", function (event) {
     event.preventDefault();
 
-    const agentNumber =document.getElementById('agent-number').value;
-    const pinNumber = document.getElementById('pin-numbers').value;
-    if(agentNumber !== accountNmbr){
-        alert("Please provide valid account number");
-        return;
+    const agentNumber = document.getElementById("agent-number").value;
+    const pinNumber = document.getElementById("pin-numbers").value;
+    if (agentNumber !== accountNmbr) {
+      alert("Please provide valid account number");
+      return;
     }
-    if(pinNumber !== validPinNmbr){
-        alert("Please provide valid pin number");
-        return;
+    if (pinNumber !== validPinNmbr) {
+      alert("Please provide valid pin number");
+      return;
     }
 
     const withdrawAmount = parseInt(
@@ -67,27 +74,3 @@ document
 
     document.getElementById("avaible-blance").innerText = totalWithdraw;
   });
-
-//    Toggling feature
-
-document.getElementById("btn-addMoney").addEventListener("click", function () {
-  const btnColor = document.getElementById("btn-addMoney");
-  btnColor.style.backgroundColor = "#0874f20d";
-  btnColor.style.borderWidth = "1px";
-  btnColor.style.borderStyle = "solid";
-  btnColor.style.borderColor = "rgba(8, 116, 242, 1)";
-
-  document.getElementById("cashOut").style.display = "none";
-  document.getElementById("addMoney").style.display = "block";
-});
-
-document.getElementById("btn-cashOut").addEventListener("click", function () {
-  const btnColor = document.getElementById("btn-cashOut");
-  btnColor.style.backgroundColor = "#0874f20d";
-  btnColor.style.borderWidth = "1px";
-  btnColor.style.borderStyle = "solid";
-  btnColor.style.borderColor = "rgba(8, 116, 242, 1)";
-
-  document.getElementById("addMoney").style.display = "none";
-  document.getElementById("cashOut").style.display = "block";
-});

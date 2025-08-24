@@ -12,11 +12,20 @@ document
     const pinValue = document.getElementById("input-pin").value;
     const pinIntConvert = parseInt(pinValue);
 
-    // console.log(mobileIntConvert,pinIntConvert);
+    //   console.log(mobileIntConvert,pinIntConvert);
 
     if (mobileNum === mobileIntConvert && pinNum === pinIntConvert) {
       window.location.href = "./home.html";
-    } else {
-      alert("Invalid");
+    }
+    // else {
+    //   alert("Invalid");
+    // }
+    if (mobileIntConvert !== mobileNum) {
+      alert("Mobile number invalid");
+      return;
+    }
+    if (pinIntConvert !== pinNum) {
+      alert("Pin number invalid");
+      return;
     }
   });
