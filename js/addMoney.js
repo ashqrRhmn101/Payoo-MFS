@@ -9,15 +9,27 @@ const account = "12345678910";
 const validPin = "1234";
 const banks = "Islami Bank";
 
+//  function to get input value
+function getInputValue(id) {
+  // const inputValue = document.getElementById(id).value;
+  const input = document.getElementById(id);
+  const inputValues = input.value;
+  input.value = "";
+  return inputValues;
+}
+
 document
   .getElementById("add-money")
   .addEventListener("click", function (event) {
     event.preventDefault();
 
+    // const bank = getInputValue("select-bank");
     const bank = document.getElementById("select-bank").value;
-    const accountNumber = document.getElementById("account-number").value;
+    // const accountNumber = document.getElementById("account-number").value;
+    const accountNumber = getInputValue("account-number");
     const addAmount = parseInt(document.getElementById("add-amount").value);
-    const pin = document.getElementById("pin-number").value;
+    // const pin = document.getElementById("pin-number").value;
+    const pin = getInputValue("pin-number");
 
     // avaible-blance
     const availableBalance = parseInt(
