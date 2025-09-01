@@ -17,15 +17,27 @@ document
     if (mobileNum === mobileIntConvert && pinNum === pinIntConvert) {
       window.location.href = "./home.html";
     }
-    // else {
-    //   alert("Invalid");
-    // }
+
+    // Custom Alert Message
+    function setAlert(message) {
+      const customAlert = document.getElementById("customAlert");
+      const alertMgs = document.getElementById("alertMgs");
+
+      customAlert.classList.remove("hidden");
+      alertMgs.innerText = message;
+
+      // 3 second hidden
+      setTimeout(() => {
+        customAlert.classList.add("hidden");
+      }, 3000);
+    }
+
     if (mobileIntConvert !== mobileNum) {
-      alert("Mobile number invalid");
+      setAlert("Warning: Mobile number invalid");
       return;
     }
     if (pinIntConvert !== pinNum) {
-      alert("Pin number invalid");
+      setAlert("Warning: Pin number invalid");
       return;
     }
   });

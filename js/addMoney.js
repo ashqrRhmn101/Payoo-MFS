@@ -8,14 +8,21 @@ document.getElementById("btn-logOut").addEventListener("click", function () {
 const account = "12345678910";
 const validPin = "1234";
 const banks = "Islami Bank";
+const transactionData = [];
 
 //  function to get input value
 function getInputValue(id) {
   // const inputValue = document.getElementById(id).value;
   const input = document.getElementById(id);
   const inputValues = input.value;
-  input.value = "";
+  // input.value = "";
   return inputValues;
+}
+
+// function set innerText amount value
+function setInnerText(value) {
+  const availableBalanceElement = document.getElementById("avaible-blance");
+  availableBalanceElement.innerText = value;
 }
 
 document
@@ -36,22 +43,47 @@ document
       document.getElementById("avaible-blance").innerText
     );
 
+    // //  Custom Alert Message
+    function setAlert(message) {
+      const customAlert = document.getElementById("customAlert");
+      const alertMgs = document.getElementById("alertMgs");
+
+      customAlert.classList.remove("hidden");
+      alertMgs.innerText = message;
+
+      // 3 second hidden
+      setTimeout(() => {
+        customAlert.classList.add("hidden");
+      }, 3000);
+    }
+
     if (bank !== banks) {
-      alert("Select Bank");
+      // setAlert("Warning: Select Bank");
+      // alert(setAlert("Warning: Select Bank"));
+      // alert("Select Bank");
       return;
     }
     if (accountNumber !== account) {
-      alert("Please provide valid account number");
+      setAlert("Warning: Mobile number invalid");
+      // alert("Please provide valid account number");
       return;
     }
     if (pin !== validPin) {
-      alert("Please provide valid pin number");
+      setAlert("Warning: Pin number invalid");
+      // alert("Please provide valid pin number");
       return;
     }
 
     const totalBalance = addAmount + availableBalance;
+    // document.getElementById("avaible-blance").innerText = totalBalance;
+    setInnerText(totalBalance);
 
-    document.getElementById("avaible-blance").innerText = totalBalance;
+    //
+    const data = {
+      name: "Add Money",
+      date: new Date().toLocaleTimeString(),
+    };
+    transactionData.push(data);
   });
 
 //  // Cash Out  Money feature
@@ -65,12 +97,29 @@ document
 
     const agentNumber = document.getElementById("agent-number").value;
     const pinNumber = document.getElementById("pin-numbers").value;
+
+    // //  Custom Alert Message
+    function setAlert(message) {
+      const customAlert = document.getElementById("customAlert");
+      const alertMgs = document.getElementById("alertMgs");
+
+      customAlert.classList.remove("hidden");
+      alertMgs.innerText = message;
+
+      // 3 second hidden
+      setTimeout(() => {
+        customAlert.classList.add("hidden");
+      }, 3000);
+    }
+
     if (agentNumber !== accountNmbr) {
-      alert("Please provide valid account number");
+      setAlert("Warning: Mobile number invalid");
+      // alert("Please provide valid account number");
       return;
     }
     if (pinNumber !== validPinNmbr) {
-      alert("Please provide valid pin number");
+      setAlert("Warning: Pin number invalid");
+      // alert("Please provide valid pin number");
       return;
     }
 
@@ -83,6 +132,14 @@ document
     );
 
     const totalWithdraw = availableBalance - withdrawAmount;
+    // document.getElementById("avaible-blance").innerText = totalWithdraw;
+    setInnerText(totalWithdraw);
 
-    document.getElementById("avaible-blance").innerText = totalWithdraw;
+    const data = {
+      name: "Cash Out",
+      date: new Date().toLocaleTimeString(),
+    };
+
+    transactionData.push(data);
+    // console.log(transactionData);
   });

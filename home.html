@@ -72,32 +72,50 @@
         <!-- Cards section -->
         <div class="cards pt-6 grid grid-cols-3 gap-4">
           <!-- 1 -->
-          <div id="btn-addMoney" class="card btn-hover border border-gray-200 py-5">
+          <div
+            id="btn-addMoney"
+            class="card btn-hover border border-gray-200 py-5"
+          >
             <img src="./assets/wallet1.png" class="mx-auto pb-2" alt="" />
             <p class="text-center text-[#080808b3] text-sm">Add Money</p>
           </div>
           <!-- 2 -->
-          <div id="btn-cashOut" class="card btn-hover border border-gray-200 py-5">
+          <div
+            id="btn-cashOut"
+            class="card btn-hover border border-gray-200 py-5"
+          >
             <img src="./assets/send1.png" class="mx-auto pb-2" alt="" />
             <p class="text-center text-[#080808b3] text-sm">Cashout</p>
           </div>
           <!-- 3 -->
-          <div id="btn-transfer" class="card btn-hover border border-gray-200 py-5">
+          <div
+            id="btn-transfer"
+            class="card btn-hover border border-gray-200 py-5"
+          >
             <img src="./assets/money1.png" class="mx-auto pb-2" alt="" />
             <p class="text-center text-[#080808b3] text-sm">Transfer Money</p>
           </div>
           <!-- 4 -->
-          <div id="btn-getBonus" class="card btn-hover border border-gray-200 py-5">
+          <div
+            id="btn-getBonus"
+            class="card btn-hover border border-gray-200 py-5"
+          >
             <img src="./assets/bonus1.png" class="mx-auto pb-2" alt="" />
             <p class="text-center text-[#080808b3] text-sm">Get Bonus</p>
           </div>
           <!-- 5 -->
-          <div id="btn-payBill" class="card btn-hover border border-gray-200 py-5">
+          <div
+            id="btn-payBill"
+            class="card btn-hover border border-gray-200 py-5"
+          >
             <img src="./assets/purse1.png" class="mx-auto pb-2" alt="" />
             <p class="text-center text-[#080808b3] text-sm">Pay Bill</p>
           </div>
           <!-- 6 -->
-          <div id="btn-transactions" class="card btn-hover border border-gray-200 py-5">
+          <div
+            id="btn-transactions"
+            class="card btn-hover border border-gray-200 py-5"
+          >
             <img src="./assets/transaction1.png" class="mx-auto pb-2" alt="" />
             <p class="text-center text-[#080808b3] text-sm">Transactions</p>
           </div>
@@ -105,8 +123,31 @@
       </div>
     </div>
 
-    <!-- All form section -->
+    <!-- All form Input  section -->
     <div class="max-w-lg mx-auto">
+      <!--  -->
+      <!-- Alert  -->
+      <div
+        id="customAlert"
+        role="alert"
+        class="hidden max-w-[400px] mx-auto alert alert-warning"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 shrink-0 stroke-current"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+          />
+        </svg>
+        <span id="alertMgs" class="">Warning: Invalid email address!</span>
+      </div>
+      <!--  -->
       <!-- Add Money section -->
       <div id="addMoney" class="form p-4">
         <h1
@@ -114,6 +155,7 @@
         >
           Add Money
         </h1>
+        <!-- Add Money section -->
         <div class="bg-white mx-auto rounded-2xl p-5 max-w-[400px]">
           <h1 class="mb-3">Select A Bank</h1>
           <select
@@ -130,6 +172,7 @@
           <input
             id="account-number"
             type="text"
+            value="12345678910"
             class="input rounded-2xl mb-4 bg-[#f4f5f7] border-none w-full"
             placeholder="Enter 11 digit account number"
           />
@@ -153,7 +196,7 @@
           <button
             id="add-money"
             type="button"
-            class="btn bg-[#0874f2] text-white w-full rounded-2xl"
+            class="card-btn btn bg-[#0874f2] text-white w-full rounded-2xl"
           >
             Add Money
           </button>
@@ -194,7 +237,7 @@
           <button
             id="withdraw-money"
             type="button"
-            class="btn bg-[#0874f2] text-white w-full rounded-2xl"
+            class="card-btn btn bg-[#0874f2] text-white w-full rounded-2xl"
           >
             Withdraw Money
           </button>
@@ -235,7 +278,7 @@
           <button
             id="withdraw-money"
             type="button"
-            class="btn bg-[#0874f2] text-white w-full rounded-2xl"
+            class="card-btn btn bg-[#0874f2] text-white w-full rounded-2xl"
           >
             Sent Now
           </button>
@@ -312,7 +355,7 @@
           <button
             id="add-money"
             type="button"
-            class="btn bg-[#0874f2] text-white w-full rounded-2xl"
+            class="card-btn btn bg-[#0874f2] text-white w-full rounded-2xl"
           >
             Pay Now
           </button>
@@ -327,103 +370,12 @@
           <p class="text-[#08080880]">View All</p>
         </div>
         <!-- Transactions cards -->
-         <div class="">
-
-           <!-- card 1 -->
-        <div class="bg-white mx-auto my-3 rounded-2xl p-3 max-w-[400px]">
-          <div class="flex justify-between items-center">
-            <!-- 1 -->
-            <div class="flex justify-center items-center">
-              <img
-                class="p-4 mr-3 bg-[#0808080d] rounded-full"
-                src="./assets/wallet1.png"
-                alt=""
-              />
-              <div>
-                <h1 class="text-[#080808b3] text-lg font-bold">
-                  Electricity Bill
-                </h1>
-                <p class="text-[#080808b3]">Today 01:44 AM</p>
-              </div>
-            </div>
-            <!-- 2 -->
-            <div class="">
-              <img src="./assets/Frame.png" alt="" />
-            </div>
+        <div>
+          <!-- cars All -->
+          <div id="transactions-Container">
+            <!-- card 1 -->
           </div>
         </div>
-        <!-- card 2 -->
-        <div class="bg-white mx-auto my-3 rounded-2xl p-3 max-w-[400px]">
-          <div class="flex justify-between items-center">
-            <!-- 1 -->
-            <div class="flex justify-center items-center">
-              <img
-                class="p-4 mr-3 bg-[#0808080d] rounded-full"
-                src="./assets/wallet1.png"
-                alt=""
-              />
-              <div>
-                <h1 class="text-[#080808b3] text-lg font-bold">
-                  Bank Deposit
-                </h1>
-                <p class="text-[#080808b3]">Today 01:44 AM</p>
-              </div>
-            </div>
-            <!-- 2 -->
-            <div class="">
-              <img src="./assets/Frame.png" alt="" />
-            </div>
-          </div>
-        </div>
-        <!-- card 3 -->
-        <div class="bg-white mx-auto my-3 rounded-2xl p-3 max-w-[400px]">
-          <div class="flex justify-between items-center">
-            <!-- 1 -->
-            <div class="flex justify-center items-center">
-              <img
-                class="p-4 mr-3 bg-[#0808080d] rounded-full"
-                src="./assets/wallet1.png"
-                alt=""
-              />
-              <div>
-                <h1 class="text-[#080808b3] text-lg font-bold">
-                  Mobile Recharge
-                </h1>
-                <p class="text-[#080808b3]">Today 01:44 AM</p>
-              </div>
-            </div>
-            <!-- 2 -->
-            <div class="">
-              <img src="./assets/Frame.png" alt="" />
-            </div>
-          </div>
-        </div>
-        <!-- card 4 -->
-        <div class="bg-white mx-auto rounded-2xl p-3 max-w-[400px]">
-          <div class="flex justify-between items-center">
-            <!-- 1 -->
-            <div class="flex justify-center items-center">
-              <img
-                class="p-4 mr-3 bg-[#0808080d] rounded-full"
-                src="./assets/wallet1.png"
-                alt=""
-              />
-              <div>
-                <h1 class="text-[#080808b3] text-lg font-bold">
-                  Gas Bill
-                </h1>
-                <p class="text-[#080808b3]">Today 01:44 AM</p>
-              </div>
-            </div>
-            <!-- 2 -->
-            <div class="">
-              <img src="./assets/Frame.png" alt="" />
-            </div>
-          </div>
-        </div>
-
-         </div>
-
       </div>
 
       <!-- end -->
@@ -431,5 +383,6 @@
 
     <script src="./js/addMoney.js"></script>
     <script src="./js/toggling.js"></script>
+    <script src="./js/history.js"></script>
   </body>
 </html>
